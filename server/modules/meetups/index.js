@@ -1,2 +1,4 @@
+import Meetup from './models';
 import MeetupRoutes from './routes';
-export { MeetupRoutes };
+
+export { MeetupRoutes, Meetup };
