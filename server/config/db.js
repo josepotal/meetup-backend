@@ -1,9 +1,15 @@
 import mongoose from 'mongoose';
 
+const keys = require('./keys');
+
+console.log(keys);
 export default () => {
   mongoose.Promise = global.Promise;
-  //mongoose.connect('mongodb://localhost/beer');
-  mongoose.connect('mongodb://josep:12345@ds111138.mlab.com:11138/beer-api');
+  /* local db */
+  // mongoose.connect('mongodb://localhost/meetup');
+  
+  mongoose.connect(keys.mongoURI);
+
   mongoose.connection
     .once('open', () => console.log('mongodb running'))
     .on('err', () => console.log(err));
